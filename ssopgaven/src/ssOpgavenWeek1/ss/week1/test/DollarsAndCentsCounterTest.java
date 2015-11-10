@@ -1,8 +1,8 @@
-package ss.week1.test;
+package ssOpgavenWeek1.ss.week1.test;
 
 import org.junit.Before;
 import org.junit.Test;
-import ss.week1.DollarsAndCentsCounter;
+import ssOpgavenWeek1.DollarsAndCentsCounter;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,6 +21,8 @@ public class DollarsAndCentsCounterTest {
      */
     @Before
     public void setUp() {
+		System.out.println("----setup----");
+
         counter = new DollarsAndCentsCounter();
         counter.reset();
     }
@@ -30,6 +32,8 @@ public class DollarsAndCentsCounterTest {
      */
     @Test
     public void testDollars() {
+		System.out.println("----testdollars----");
+
         counter.add(5, 0);
         assertEquals(5, counter.dollars());
         counter.add(0, 100);
@@ -41,6 +45,8 @@ public class DollarsAndCentsCounterTest {
      */
     @Test
     public void testCents() {
+		System.out.println("----testcents----");
+
         counter.add(0, 5);
         assertEquals(5, counter.cents());
         counter.add(0, 95);
@@ -52,6 +58,8 @@ public class DollarsAndCentsCounterTest {
      */
     @Test
     public void testAdd() {
+		System.out.println("----testadd----");
+
         counter.add(0, 10);
         assertEquals(0, counter.dollars());
         assertEquals(10, counter.cents());
@@ -65,6 +73,8 @@ public class DollarsAndCentsCounterTest {
      */
     @Test
     public void testReset() {
+		System.out.println("----testreset----");
+
         counter.add(22, 33);
 
         counter.reset();

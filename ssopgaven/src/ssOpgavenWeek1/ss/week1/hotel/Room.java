@@ -1,4 +1,6 @@
-package ss.week1.hotel;
+package ssOpgavenWeek1.ss.week1.hotel;
+
+import ssOpgavenWeek1.Guest;
 
 /**
  * Hotel room with number and possibly a guest.
@@ -51,4 +53,13 @@ public class Room {
     public void setGuest(Guest g) {
     	guest = g;
     }
+    
+    /**
+     * A string representations of this object
+     */
+    public String toString() {
+        return "Room No." + number;
+    }
+	
+
 }
