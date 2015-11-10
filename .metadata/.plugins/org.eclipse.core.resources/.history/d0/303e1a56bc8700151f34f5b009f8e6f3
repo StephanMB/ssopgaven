@@ -1,5 +1,7 @@
 package ssOpgavenWeek1.ss.week1.hotel;
 
+import ssOpgavenWeek1.Guest;
+
 /**
  * Hotel room with number and possibly a guest.
  * @author Arend Rensink
