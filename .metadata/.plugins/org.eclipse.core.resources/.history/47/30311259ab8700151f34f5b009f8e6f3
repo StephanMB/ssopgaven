@@ -1,0 +1,12 @@
+package ssOpgavenWeek1;
+
+public class passed {
+	
+	public passed(){		
+	}
+	
+	public boolean test( int score){
+		return score>=70;
+	}
+
+}
