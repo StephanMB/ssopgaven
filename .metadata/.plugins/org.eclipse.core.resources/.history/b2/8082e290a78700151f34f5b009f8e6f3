@@ -1,0 +1,38 @@
+package ssOpgavenWeek1;
+
+public class ThreeWayLampTest {
+
+	public ThreeWayLampTest(){
+		
+	}
+	
+	public void Test(ThreeWayLamp lamp){
+	
+		System.out.println("Test setting, should be Off: " + compare(lamp.getSetting(), "Off"));
+		lamp.click();
+		System.out.println("Click! \n Should now be Low: " + compare(lamp.getSetting(), "Low"));
+		lamp.click();
+		System.out.println("Click! \n Should now be Medium: " + compare(lamp.getSetting(), "Medium"));
+		lamp.click();
+		System.out.println("Click! \n Should now be High: " + compare(lamp.getSetting(), "High"));
+		lamp.click();
+		System.out.println(lamp.getSetting());
+		System.out.println("Click! \n Should now be Off: " + compare(lamp.getSetting(), "Off"));
+	}
+	
+	public Boolean compare(String real, String shouldBe){
+		if (real.equals(shouldBe)){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static void main(String[] args) {
+		ThreeWayLampTest test = new ThreeWayLampTest();
+		ThreeWayLamp lamp = new ThreeWayLamp();
+		test.Test(lamp);
+		
+	}
+
+}
