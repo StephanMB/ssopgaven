@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\$SSHome" version="1.7.0_79">
+<bootpath>
+<entry path="C:\$SSHome\lib\resources.jar"/>
+<entry path="C:\$SSHome\lib\rt.jar"/>
+<entry path="C:\$SSHome\lib\sunrsasign.jar"/>
+<entry path="C:\$SSHome\lib\jsse.jar"/>
+<entry path="C:\$SSHome\lib\jce.jar"/>
+<entry path="C:\$SSHome\lib\charsets.jar"/>
+<entry path="C:\$SSHome\lib\jfr.jar"/>
+<entry path="C:\$SSHome\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\$SSHome\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\$SSHome\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

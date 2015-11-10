@@ -1,0 +1,29 @@
+package ssOpgavenWeek1;
+
+public class ThreeWayLamp {
+	public static final int OFF = 0;
+	public static final int LOW = 1;
+	public static final int MEDIUM = 2;
+	public static final int HIGH = 3;
+	public int setting = 0;
+
+	
+	public ThreeWayLamp(){
+	}
+	
+	public void click (){
+		setting = setting + 1;
+	}
+
+	public String getSetting(){
+		if (setting == OFF){
+			return "Off";
+		} else if (setting == LOW){
+			return "Low";
+		} else if (setting == MEDIUM){
+			return "Medium";
+		} else {
+			return "High";
+		}
+	}
+}
