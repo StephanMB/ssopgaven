@@ -1,0 +1,53 @@
+package week2;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import week2.Rectangle;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+
+/**
+ * Testprogram for Rectangle.
+ * Lab Exercise SoftwareSystems
+ * @author Stephan
+ * @version 1
+ */
+public class RectangleTest {
+    private Rectangle vierkantje;
+
+    /**
+     */
+    @Before
+    public void setUp() {
+         vierkantje = new Rectangle(-5,1);
+    }
+
+    /**
+     */
+    @Test
+    public void testConstructor() {
+        /*vierkantje = new Rectangle(-1,1);
+        vierkantje = new Rectangle(1,-1);
+        vierkantje = new Rectangle(-1,-1);
+        vierkantje = new Rectangle(0,0);
+        vierkantje = new Rectangle(1,0);
+        vierkantje = new Rectangle(0,1);
+        vierkantje = new Rectangle(-1,0);
+        vierkantje = new Rectangle(0,-1);*/
+        vierkantje = new Rectangle(1,1);
+  }
+
+    /**
+     */
+    @Test
+    public void testQueries() {
+        assertEquals(1, vierkantje.width());
+        assertEquals(1, vierkantje.length());
+        assertEquals(1, vierkantje.area());
+        assertEquals(4, vierkantje.perimeter());
+    }
+
+}
