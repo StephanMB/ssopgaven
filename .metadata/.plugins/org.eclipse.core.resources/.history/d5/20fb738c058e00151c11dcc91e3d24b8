@@ -1,0 +1,47 @@
+package week2;
+
+public class Rectangle {
+	
+	/**
+	 * Create a new <code>Rectangle</code> with the specified length and width. Length and width must be non-negative.
+	 * @param lenght
+	 * @param width
+	 */
+	public  Rectangle (int lenght, int width){
+		
+	}
+
+	/**
+	 * The length of this  <code>Rectangle</code>
+	 * @return
+	 */
+	public int length(){
+		return 0;
+	}
+	
+	/**
+	 * The width of this  <code>Rectangle</code>
+	 * @return
+	 */
+	public int width (){
+		return 0;
+	}
+	
+	/**The area if this  <code>Rectangle</code>
+	 * 
+	 * @return
+	 */
+	
+	public int area (){
+		return 0;
+	}
+	
+	/**
+	 * The perimeter of this  <code>Rectangle</code>
+	 * @return
+	 */
+	public int perimeter (){
+		return 0;
+	}
+	
+}

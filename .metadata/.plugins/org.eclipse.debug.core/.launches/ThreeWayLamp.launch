@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/ssopgaven/src/ssOpgavenWeek1/ThreeWayLamp.java"/>
+<listEntry value="/ssopgaven/src/week1/ThreeWayLamp.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ssOpgavenWeek1.ThreeWayLamp"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="week1.ThreeWayLamp"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ssopgaven"/>
 </launchConfiguration>
