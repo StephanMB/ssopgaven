@@ -2,4 +2,5 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="ssOpgavenWeek1.ss.week1.hotel.Room"/>
 <fullyQualifiedTypeName name="ssOpgavenWeek1.Guest"/>
+<fullyQualifiedTypeName name="org.junit.rules.ExpectedException"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,45 @@
+package week2;
+
+public class ThreeWayLamp {
+	// ------------------ Instance variables ----------------
+	public static final int OFF = 0;
+	public static final int LOW = 1;
+	public static final int MEDIUM = 2;
+	public static final int HIGH = 3;
+	//@ public invariant 0 <= setting &&  setting>= 3;
+	public int setting = 0;
+
+	// ------------------ Constructor ------------------------
+	public ThreeWayLamp(){
+	}
+	// ------------------ Commands --------------------------
+	//@ requires 0 <= setting &&  setting>= 3;
+	//@ ensures 0 <= setting &&  setting>= 3;
+	public void click (){
+		assert (0 <= setting &&  setting>= 3) : "Error in Lamp Setting";
+		
+		setting = setting + 1;
+		setting = setting % 4;
+	}
+	// ------------------ Queries --------------------------
+	//@ requires 0 <= setting &&  setting>= 3;
+	//@ ensures \old(setting) == OFF ==> \new(result) == LOW;
+	//@ ensures \old(setting) == MEDIUM ==> \new(result) == HIGH;
+	//@ ensures \old(setting) == HIGH ==> \new(result) == OFF;
+	public String getSetting(){
+		assert (0 <= setting &&  setting>= 3) : "Error in Lamp Setting";
+		
+		if (setting == OFF){
+			return "Off";
+		} else if (setting == LOW){
+			return "Low";
+		} else if (setting == MEDIUM){
+			return "Medium";
+		} else {
+			return "High";
+		}
+	}
+	
+	public static void main (String[] args){
+	}
+}

@@ -2,19 +2,17 @@ package week2;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.Rule;
+
 
 import week2.Rectangle;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
+
 
 /**
  * Testprogram for Rectangle.
  * Lab Exercise SoftwareSystems
- * @author Stephan
+ * @author Stephan B
  * @version 1
  */
 public class RectangleTest {
@@ -32,7 +30,7 @@ public class RectangleTest {
     
      /**
      */
-    @Test(expected=AssertionError.class)	
+    @Test(expected = AssertionError.class)	
     public void testConstructor() {
         foutVierkantje = new Rectangle(-1,1);
         foutVierkantje = new Rectangle(1,-1);
