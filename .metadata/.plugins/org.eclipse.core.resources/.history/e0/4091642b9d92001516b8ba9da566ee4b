@@ -1,0 +1,32 @@
+package week2.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import week2.hotel.Safe;
+import week2.hotel.Password;
+
+public class SafeTest {
+	
+	private Safe safe;
+	private Password rightPass;
+	private Password wrongpass;
+
+	@Before
+	public void setUp() {
+		rightPass = new Password();
+		rightPass.setWord('password', 'wrongwrong');
+		wrongPass = new Password();
+		wrongPass.setWord('password', 'wrongwrong');
+
+		safe = new
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

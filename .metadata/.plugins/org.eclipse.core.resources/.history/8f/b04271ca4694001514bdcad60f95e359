@@ -1,0 +1,81 @@
+package week2.hotel;
+
+
+/**
+ * 
+ * @author Stephan Braams
+ * @version 1.0 *
+ */
+public class hotel {
+
+	// ------------------ Instance variables ----------------
+
+	//@ public invariant
+	private Room room1;
+	private Room room2;
+	private Password hotelPass;
+
+	// ------------------ Constructor -----------------------
+	
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public hotel(){
+		room1 = new Room(1);
+		room1 = new Room(2);
+		hotelPass = new Password();
+	}
+
+	// ------------------ Queries --------------------------
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public Room getFreeRoom () {
+		Room freeRoom = null;
+		if (room1.getGuest != null) {
+			freeRoom = room1;
+		} else if (room2.getGuest != null){
+			freeRoom = room2;
+		}
+		return freeRoom;
+	}
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public getRoom (String guestName) {
+		return ;
+	}
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public String getPassword(){
+		
+	}
+
+	// ------------------ Commands --------------------------
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public Room checkIn(String tryPass, String guestName){
+	}
+	
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public void checkOut (String guestName){
+	}
+	
+}
+
+
+

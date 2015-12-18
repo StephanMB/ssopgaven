@@ -2,40 +2,45 @@
 /**
  * 
  * @author Stephan Braams
- * @version 1.0
- *
+ * @version 1.0 *
  */
-public class Password  {
+public class {
+
 	// ------------------ Instance variables ----------------
 
-	// ------------------ Constructor ------------------------
-    /**
+	//@ public invariant
+	public int i ;
+
+	// ------------------ Constructor -----------------------
+	
+	/**
 	 */
+	//@ requires;
+	//@ ensures;
 	public (){
-		;
+	;
 	}
+
 	// ------------------ Queries --------------------------
 
-    /**
-     */
-    public  () {
-    	return ;
-    }
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public int () {
+		return ;
+	}
 
-    /**
-    */
-    public  () {
-    	return ;
-    }
 
 	// ------------------ Commands --------------------------
 
-    /**
-     */
-    public void (){
-    	
-    }
-  
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public void (){
+	}
+	  
 }
 
 

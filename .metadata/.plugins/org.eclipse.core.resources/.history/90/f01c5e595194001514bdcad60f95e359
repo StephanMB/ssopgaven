@@ -1,0 +1,120 @@
+package week2.hotel;
+
+
+/**
+ * 
+ * @author Stephan Braams
+ * @version 1.0 *
+ */
+public class Hotel {
+
+	// ------------------ Instance variables ----------------
+
+	//@ public invariant
+	private Room room1;
+	private Room room2;
+	private Password hotelPass;
+	private String hotelName;
+
+	// ------------------ Constructor -----------------------
+	
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public Hotel(String newName){
+		hotelName = newName;
+		room1 = new Room(1);
+		room1 = new Room(2);
+		hotelPass = new Password();
+	}
+
+	// ------------------ Queries --------------------------
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public Room getFreeRoom () {		
+		Room freeRoom = null;
+		if (room1.getGuest() == null) {
+			freeRoom = room1;
+		} else if (room2.getGuest() == null){
+			freeRoom = room2;
+		}
+		return freeRoom;
+	}
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public Room getRoom (String guestName) {
+		Room guestRoom = null;
+		if (room1.getGuest().equals(guestName)) {
+			guestRoom = room1;
+		} else if (room2.getGuest().equals(guestName)){
+			guestRoom = room2;
+		}
+		return guestRoom;
+
+	}
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public Password getPassword(){
+		return hotelPass;		
+	}
+	
+	public String toString(){
+		return "Hotel "+ hotelName + "./n"
+				+ "Room 1: Guest name: " + room1.getGuest().getName() + ". Safe status: " + room1.getSafe().state +"./n"
+				+ "Room 2: Guest name: " + room2.getGuest().getName() + ". Safe status: " + room2.getSafe().state +".";
+	}
+
+	public boolean hotelIsEmpty(){
+		Boolean result = false;
+		if (room1.getGuest() != null && room2.getGuest() != null){
+			result = true;
+		}
+		return result;
+	}
+	// ------------------ Commands --------------------------
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public Room checkIn(String tryPass, String guestName){
+		Room freeRoom = getFreeRoom();
+		Boolean emptyAllowed = freeRoom != null && hotelIsEmpty() && tryPass.equals(hotelPass);
+		Boolean oneRoomAllowed = true;
+		
+		if (hotelIsEmpty() == false && freeRoom != null){
+		 oneRoomAllowed = freeRoom != null && hotelIsEmpty() == false && !room1.getGuest().getName().equals(guestName) && tryPass.equals(hotelPass);
+		}
+		
+		if (emptyAllowed ||oneRoomAllowed ){
+			Guest newGuest = new Guest(guestName);
+			freeRoom.setGuest(newGuest);
+		}
+		return freeRoom;
+	}
+	
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public void checkOut (String guestName){
+		Room checkOutRoom = getRoom(guestName);
+		if(checkOutRoom != null) {
+			checkOutRoom.getSafe().deactivate();
+			checkOutRoom.setGuest(null);
+		}
+	}
+}
+
+
+

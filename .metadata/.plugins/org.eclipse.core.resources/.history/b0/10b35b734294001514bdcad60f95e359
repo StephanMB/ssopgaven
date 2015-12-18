@@ -1,0 +1,103 @@
+package week2.hotel;
+
+
+/**
+ * @author Stephan Braams
+ * @version 1.0 *
+ */
+public class Safe {
+
+	// ------------------ Instance variables ----------------
+
+	public enum Active {OFF, ON};
+	public enum State {OPEN, CLOSED};
+	public Active active;
+	public State state;
+	//@ public invariant password.acceptable(password.getWord()) == true;
+	public Password password;
+	
+
+	// ------------------ Constructor -----------------------
+	
+	/**
+	 * Creates a new deactivated with password "newPassword"
+	 * @param newPassword. a valid new password
+	 */
+	//@ ensures password == newPassword;
+
+	public Safe(Password newPassword){
+		password = newPassword;
+	}
+
+	// ------------------ Queries --------------------------
+
+	/**
+	 * Checks if the safe is Active
+	 * @result true is Active, false if deactivated
+	 */
+	//@ ensures active == active.ON ==> \result == true;
+	//@ ensures active == active.OFF ==> \result == false;
+	public boolean isActive() {
+		Boolean result = false;
+		active.equals(ON) ? (result = true) : (result = false);
+		return result;
+	}
+	
+	/**
+	 * Checks if the safe is open
+	 * @result true is open, false if closed
+	 */
+	//@ ensures state == State.OPEN ==> \result == true;
+	//@ ensures state == State.CLOSED ==> \result == false;
+	public boolean isOpen() {
+		return false;
+	}
+	
+	/**
+	 * Returns the password
+	 * @result password
+	 */
+	//@ ensures \result == password;
+	public Password getPassword() {
+		return password;
+	}
+	
+	// ------------------ Commands --------------------------
+
+	/**
+	 * Sets the safe to on
+	 */
+	//@ ensures Active == Active.ON;
+	public void activate(){
+	}
+	
+	/**
+	 * Sets the safe to off
+	 */
+	//@ ensures Active == Active.OFF;
+	public void deactivate(){
+	}
+	
+	/**
+	 * Enters a password. 
+	 * @param tryPassword password to be tried
+	 * @result  true if password is vald, false if it is not.
+	 */
+	//@ ensures password.acceptable(tryPassword) == true;
+	//@ ensures tryPassword == password.getWord() ==> \result == true;
+	//@ ensures tryPassword != password.getWord() ==> \result == false;
+	public boolean open(String tryPassword) {
+		return false;
+	}
+
+	/**
+	 * Closes the save
+	 */
+	//@ ensures state == State.CLOSED;
+	public boolean close(String tryPassword) {
+		return false;
+	}
+}
+
+
+

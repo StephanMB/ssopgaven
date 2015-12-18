@@ -6,7 +6,7 @@ public class ThreeWayLampTest {
 		
 	}
 	
-	public void Test(ThreeWayLamp lamp){
+	public void Test(ThreeWayLamp2 lamp){
 	
 		Boolean result1 = compare(lamp.getSetting(), "Off");
 		System.out.println("Test setting, should be Off: " + result1 );
@@ -46,7 +46,7 @@ public class ThreeWayLampTest {
 	
 	public static void main(String[] args) {
 		ThreeWayLampTest test = new ThreeWayLampTest();
-		ThreeWayLamp lamp = new ThreeWayLamp();
+		ThreeWayLamp2 lamp = new ThreeWayLamp2();
 		test.Test(lamp);
 		
 	}

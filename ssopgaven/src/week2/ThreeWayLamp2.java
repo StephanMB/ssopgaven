@@ -6,8 +6,8 @@ public class ThreeWayLamp2 {
 	public State setting;
 
 	// ------------------ Constructor ------------------------
-	public ThreeWayLamp2(State newState){
-		setting = newState;
+	public ThreeWayLamp2(){
+		setting = State.OFF;
 	}
 	
 	// ------------------ Commands --------------------------

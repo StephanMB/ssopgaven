@@ -1,0 +1,109 @@
+package week2.hotel;
+
+
+/**
+ * 
+ * @author Stephan Braams
+ * @version 1.0 *
+ */
+public class hotel {
+
+	// ------------------ Instance variables ----------------
+
+	//@ public invariant
+	private Room room1;
+	private Room room2;
+	private Password hotelPass;
+
+	// ------------------ Constructor -----------------------
+	
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public hotel(){
+		room1 = new Room(1);
+		room1 = new Room(2);
+		hotelPass = new Password();
+	}
+
+	// ------------------ Queries --------------------------
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public Room getFreeRoom () {
+		Room freeRoom = null;
+		if (room1.getGuest() != null) {
+			freeRoom = room1;
+		} else if (room2.getGuest() != null){
+			freeRoom = room2;
+		}
+		return freeRoom;
+	}
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public Room getRoom (String guestName) {
+		Room guestRoom = null;
+		if (room1.getGuest().equals(guestName)) {
+			guestRoom = room1;
+		} else if (room2.getGuest().equals(guestName)){
+			guestRoom = room2;
+		}
+		return guestRoom;
+
+	}
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public String getPassword(){
+		return hotelPass.getWord();		
+	}
+	
+	public String toString(){
+		return "Room 1: Guest name: " + room1.getGuest().getName() + ". Safe status: " + room1.getSafe().state +"./n"
+				+ "Room 2: Guest name: " + room2.getGuest().getName() + ". Safe status: " + room2.getSafe().state +".";
+	}
+
+	// ------------------ Commands --------------------------
+
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public Room checkIn(String tryPass, String guestName){
+		Room resultRoom;
+		Boolean passCorrect = tryPass.equals(hotelPass);
+		Boolean hotelIsNotFull = getFreeRoom() != null;
+		Boolean noGuestWithName = room1.getGuest().getName() != guestName;
+		noGuestWithName = room2.getGuest().getName() != guestName;
+		
+		if (passCorrect && hotelIsNotFull && noGuestWithName) {
+			Guest newGuest = new Guest (guestName);
+			resultRoom = getFreeRoom();
+			resultRoom.setGuest(newGuest);			
+		}
+		return resultRoom;
+	}
+	
+	/**
+	 */
+	//@ requires;
+	//@ ensures;
+	public void checkOut (String guestName){
+		Room checkOutRoom = getRoom(guestName);
+		if(checkOutRoom != null) {
+			checkOutRoom.getSafe().deactivate();
+			checkOutRoom.setGuest(null);
+		}
+	}
+}
+
+
+
